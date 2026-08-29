@@ -1,0 +1,6 @@
+-keep class org.tensorflow.lite.Interpreter { *; }
+-keep class org.tensorflow.lite.nnapi.NnApiDelegate { *; }
+-keep class androidx.room.** { *; }
+-keep class com.expensetracker.data.local.** { *; }
+-dontwarn org.tensorflow.lite.**
+-assumenosideeffects class android.util.Log { *; }

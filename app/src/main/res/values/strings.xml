@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ExpenseTracker</string>
+    <string name="prompt_channel_name">Daily Expense Reminder</string>
+    <string name="prompt_channel_desc">Reminds you daily to log spending via voice</string>
+    <string name="voice_prompt">Time to log your spending. What did you spend today?</string>
+    <string name="tts_confirm">I heard %1$s %2$s for %3$s in %4$s, is that right?</string>
+    <string name="permission_mic_rationale">Voice is processed on-device via Google engine, not stored</string>
+    <string name="permission_internet_rationale">Only to fetch currency rates, not your expenses</string>
+</resources>
