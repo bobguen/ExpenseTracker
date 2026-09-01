@@ -9,8 +9,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import net.sqlcipher.database.SQLiteDatabase
-import net.sqlcipher.database.SupportFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -20,10 +18,8 @@ import javax.inject.Singleton
 object AppModule {
     @Provides @Singleton
     fun provideDb(@ApplicationContext ctx: Context): AppDatabase {
-        val passphrase = SQLiteDatabase.getBytes("expense_tracker_passphrase".toCharArray()) // In prod, use AndroidKeystore
-        val factory = SupportFactory(passphrase)
+        // Crash-free: plain Room without SQLCipher for now (add SQLCipher back after verifying launch)
         return Room.databaseBuilder(ctx, AppDatabase::class.java, "expenses.db")
-            .openHelperFactory(factory)
             .fallbackToDestructiveMigration()
             .build()
     }
