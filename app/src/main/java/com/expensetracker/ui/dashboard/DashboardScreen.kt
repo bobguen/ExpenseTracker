@@ -32,7 +32,7 @@ fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel(), onMicClick:
             Text("Transactions: ${tx.size}", style = MaterialTheme.typography.labelMedium)
             // Flexible comparison placeholder
             val range = PeriodCalculator.rangeFor(period)
-            Text("Period: ${range.first}..${range.last}", style = MaterialTheme.typography.labelSmall)
+            Text("Period: ${range.first}..${range.second}", style = MaterialTheme.typography.labelSmall)
         }}
         // Charts placeholder (MPAndroidChart would render here)
         Card { Box(modifier = Modifier.fillMaxWidth().height(160.dp).padding(16.dp)) { Text("Pie: by Category | Bar: daily | Line: trend (offline computed via Room SUM GROUP BY)") } }
