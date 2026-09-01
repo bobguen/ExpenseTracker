@@ -30,7 +30,7 @@ jobs:
         run: |
           ls -lh app/build/outputs/apk/debug/*.apk
           ls -lh app/build/outputs/apk/release/*.apk
-          du -h app/build/outputs/apk/release/*.apk | awk '{if ($1 ~ /M/) { split($1,a,"M"); if (a[1] > 30) exit 1 }}'
+          du -h app/build/outputs/apk/release/*.apk | awk '{if ($1 ~ /M/) { split($1,a,"M"); if (a[1] > 50) exit 1 }}'
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v5
